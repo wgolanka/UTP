@@ -1,5 +1,7 @@
 package com.company;
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static com.company.ListCreator.collectFrom;
 
@@ -15,17 +17,15 @@ public class Main {
     }
 
     public List<Integer> test1(List<Integer> src) {
-        SelectorImpl<Integer> sel = new SelectorImpl<>();
-        MapperImpl<Integer> map = new MapperImpl<>();
+        Selector sel = new SelectorInteger();
+        Mapper map = new MapperInteger();
         return collectFrom(src).when(sel).mapEvery(map);
     }
 
     public List<Integer> test2(List<String> src) {
-        Selector /*<-- definicja selektora; bez lambda-wyrażeń; nazwa zmiennej sel */
-                Mapper   /*<-- definicja mappera; bez lambda-wyrażeń; nazwa zmiennej map */
-        return   /*<-- zwrot wyniku
-            uzyskanego przez wywołanie statycznej metody klasy ListCreator:
-           */  collectFrom(src).when(sel).mapEvery(map);
+        Selector sel = new SelectorString();
+        Mapper map = new MapperString();
+        return collectFrom(src).when(sel).mapEvery(map);
     }
 
     public static void main(String[] args) {

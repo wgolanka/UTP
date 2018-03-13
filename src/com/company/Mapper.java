@@ -1,4 +1,8 @@
 package com.company;
 
-public interface Mapper <M> {
+import java.util.List;
+
+public interface Mapper<T> {
+
+    public List<T> map(T arg);
 }

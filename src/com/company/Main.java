@@ -1,6 +1,9 @@
 package com.company;
 import java.util.*;
 
+import static com.company.ListCreator.collectFrom;
+
+
 public class Main {
 
     public Main() {
@@ -12,11 +15,9 @@ public class Main {
     }
 
     public List<Integer> test1(List<Integer> src) {
-        Selector /* <-- definicja selektora; bez lambda-wyrażeń; nazwa zmiennej sel */
-        Mapper           Mapper /*<-- definicja mappera; bez lambda-wyrażeń; nazwa zmiennej map */
-        return   /*<-- zwrot wyniku
-            uzyskanego przez wywołanie statycznej metody klasy ListCreator:
-           */  collectFrom(src).when(sel).mapEvery(map);
+        SelectorImpl<Integer> sel = new SelectorImpl<>();
+        MapperImpl<Integer> map = new MapperImpl<>();
+        return collectFrom(src).when(sel).mapEvery(map);
     }
 
     public List<Integer> test2(List<String> src) {

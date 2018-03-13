@@ -1,4 +1,6 @@
 package com.company;
 
-public interface Selector<S> {
+public interface Selector<T> {
+
+    Boolean select(T arg);
 }

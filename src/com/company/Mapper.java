@@ -1,6 +1,5 @@
 package com.company;
 
-public interface Mapper<T> {
-
-    T map(T arg);
+public interface Mapper<T, S> {
+    T map(T arg, S val);
 }

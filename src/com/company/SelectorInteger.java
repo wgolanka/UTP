@@ -1,9 +1,9 @@
 package com.company;
 
-public class SelectorInteger implements Selector<Integer>{
+public class SelectorInteger implements Selector<Number>{
 
     @Override
-    public Boolean select(Integer arg) {
-        return arg < 10;
+    public Boolean select(Number arg) {
+        return arg.doubleValue() < 10;
     }
 }

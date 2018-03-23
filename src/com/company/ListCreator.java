@@ -13,7 +13,7 @@ public class ListCreator<T>{
     }
 
     public static <T> ListCreator<T> collectFrom(List<T> src){
-        return new ListCreator<T>(src);
+        return new ListCreator<>(src);
     }
 
     public ListCreator when(Selector<T> selector){
@@ -29,12 +29,12 @@ public class ListCreator<T>{
         return this;
     }
 
-    public List<T> mapEvery(Mapper<T> map){
+    public List<T> mapEvery(Mapper<T, Integer> map){
 
         List<T> newList = new ArrayList<>();
 
         for(T arg : this.objects){
-          newList.add(map.map(arg));
+            newList.add(map.map(arg, 10));
         }
 
         objects = newList;

@@ -1,11 +1,10 @@
 package com.company;
 
 
-public class MapperInteger implements Mapper<Integer>{
-
+public class MapperInteger implements Mapper<Number, Number>{
 
     @Override
-    public Integer map(Integer arg) {
-        return arg + 10;
+    public Number map(Number arg, Number val) {
+        return arg.doubleValue() + val.doubleValue();
     }
 }
